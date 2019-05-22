@@ -1,0 +1,3 @@
+# ignore cea files
+Data/cea.RData
+Data/ceaNew.RData
