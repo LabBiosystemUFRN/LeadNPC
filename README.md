@@ -1,4 +1,4 @@
-#LeadNPC
+# LeadNPC
 ## Systems Biology-Based Analysis Indicates Global Transcriptional Impairment in Lead-Treated Human Neural Progenitor Cells
 
 In order, to run this pipeline you will need to download the  raw data sequence reads from Sequence Read Archive, accession SRP079342, Gene Expression Omnibus, accession GSE84712, get the Ensembl GRCh38 Human genome reference and annotation (release 91), and have the software Hisat2 and FeatureCounts installed.
