@@ -56,4 +56,4 @@ This is not a completely automatic process. You will need to use RedeR and Cytos
 > 14Marquers.R
 
 ##### Other analysis
-Another auxiliary analysis was performed using several scripts placed inside /bin folder.
+Another auxiliary analysis was performed using several scripts placed inside *bin* folder.
