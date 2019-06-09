@@ -67,11 +67,11 @@ This is not a completely automatic process. You will need to use RedeR and [Cyto
 > [09GODendo.R](./bin/09GODendo.R)
 
 #### Generate Figures 3 and 4 dendograms
-This is not a completely automatic process. You will need to use RedeR manually.
+This is not a completely automatic process. You will need to use RedeR and [Cytoscape](https://cytoscape.org/download.html) manually. For more information on how to connect Cytoscape and R, see [Cytoscape](https://cytoscape.org/) and [RCy3](https://bioconductor.org/packages/release/bioc/html/RCy3.html) documentation.
 > [10graphoClustersRCy3.R](./bin/09graphoClustersRCy3.R)
 
 #### Generate Markers figures
-> [11Marquers.R](./bin/10Marquers.R)
+> [11Marquers.R](./bin/11Marquers.R)
 
 #### Other analysis
 Another auxiliary analysis was performed using several scripts placed inside *bin* folder.
