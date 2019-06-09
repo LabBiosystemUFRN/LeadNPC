@@ -1,12 +1,15 @@
 rm(list = ls())
 
+#Did you change it to your base location?
+baseDir="~/LeadTest/"
+setwd(baseDir)
+source(file = "bin/00base.R")
+
 library("purrr")
 library(ggplot2)
 
-setwd("/home/clovis/Dropbox/Chumbo/")
-#load("./Data/pheno_data.RData")
 load("./Data/counts.RData")
-load("./transcriptograms/allTranscriptogramers80")
+load("./Data/allTranscriptogramers80")
 
 figuras="figuras"
 
@@ -198,7 +201,7 @@ ambos$Intv1[is.na(ambos$Intv1)]<-" "
 ambos$Intv2[is.na(ambos$Intv2)]<-" "
 ambos<-ambos[order(-ambos$cluster,ambos$Intv1,ambos$Intv2,decreasing = T),]
 ambos<-ambos[,c(1,2,5,3,4)]
-write.csv(ambos,file = "/home/clovis/Dropbox/Chumbo/terms/resumo.csv",
+write.csv(ambos,file = "./terms/resumo.csv",
           row.names = F)
 
 #######################################################3

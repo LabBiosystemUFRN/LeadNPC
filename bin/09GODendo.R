@@ -1,9 +1,13 @@
 rm(list = ls())
-setwd("/home/clovis/Dropbox/Chumbo/")
-load("./transcriptograms/allTranscriptogramers80")
+
+#Did you change it to your base location?
+baseDir="~/LeadTest/"
+setwd(baseDir)
+source(file = "bin/00base.R")
+
+load("./Data/allTranscriptogramers80")
 load("./Data/tfs.RData")
-#load("./Data/colors.RData")
-load("./Data/colorsSB.RData")
+load("./Data/colors.RData")
 
 library(transcriptogramer)
 source(file = "./bin/GOdendogram.R")
@@ -128,7 +132,7 @@ sizeBase <- 100
  
  cluster = 5
  #maxRate=1
- source(file = "./bin/GOdendogramErro.R.R")
+ #source(file = "./bin/GOdendogramErro.R.R")
  result <- tryCatch(GOdendogram(object, 
                                cluster = cluster, 
                                #nCores = 10,

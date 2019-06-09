@@ -1,10 +1,16 @@
 rm(list = ls())
+
+#Did you change it to your base location?
+baseDir="~/LeadTest/"
+setwd(baseDir)
+source(file = "bin/00base.R")
+
 # CIRCOS PLOT - TI-1 ------------------------------------------------------
 
 library(circlize)
 library(dplyr)
 
-setwd("/home/clovis/Dropbox/Chumbo/git (cópia 1)/")
+figuras = "figuras"
 
 load("./Data/allTranscriptogramers80")
 
@@ -50,7 +56,7 @@ c_filter3 <- merge(df3, size2, by.x = "Var1", by.y = "clusters2")
 c_filter4 <- c_filter3 %>% 
   group_by(Var1) %>% 
   mutate(k = Freq / size) %>% 
-  select(Var1, Var2, k)
+  dplyr::select(Var1, Var2, k)
 
 c_filter5 <- c_filter4 %>%
   ungroup() %>% 
@@ -63,8 +69,10 @@ col_grid <- c("#ff2222ff", "#009900ff", "#ffff00ff", "#ff9e30ff", "#1818fcff", "
 
 # Plot
 circos.clear()
-chordDiagram(c_filter5, grid.col = col_grid)
 
+pdf(width = 11,height = 11,file = paste0("./",figuras,"/circ1.pdf"))
+chordDiagram(c_filter5, grid.col = col_grid)
+dev.off()
 
 
 
@@ -114,7 +122,7 @@ c_filter3 <- merge(df3, size2, by.x = "Var1", by.y = "clusters2")
 c_filter4 <- c_filter3 %>% 
   group_by(Var1) %>% 
   mutate(k = Freq / size) %>% 
-  select(Var1, Var2, k)
+  dplyr::select(Var1, Var2, k)
 
 c_filter5 <- c_filter4 %>%
   ungroup() %>% 
@@ -127,10 +135,7 @@ col_grid <- c("#ff2222ff", "#ff9e30ff", "#01ff40ff", "#0000ffff", "#ada27aff", "
 
 # Plot
 circos.clear()
+pdf(width = 11,height = 11,file = paste0("./",figuras,"/circ2.pdf"))
 chordDiagram(c_filter5, grid.col = col_grid)
-
-
-
-
-
+dev.off()
 

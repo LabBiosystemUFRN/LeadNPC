@@ -1,7 +1,10 @@
 rm(list = ls())
 
-#library(edgeR)
-#library(refGenome)
+#Did you change it to your base location?
+baseDir="~/LeadTest/"
+setwd(baseDir)
+source(file = "bin/00base.R")
+
 library(transcriptogramer)
 library(biomaRt)
 library("FactoMineR")
@@ -11,10 +14,9 @@ library(factoextra)
 
 # Ler tabela de counts ----------------------------------------------------
 
-setwd("/home/clovis/Dropbox/Chumbo/")
 
 figuras="figuras"
-graficos="graficos"
+graficos="tmpGraf"
 transcripto="allTranscriptogramers80"
 boundary=TRUE
 
@@ -99,16 +101,6 @@ g
 dev.off()
 
 
-# pdf(file = paste0("./",figuras,"/PC1xPC2.pdf",height = 8, width = 11))
-# plot(x = pca$x[,1:2], pch=pch.code[targets], col=color.code[targets], main = "PCA after normalization")
-# text(pca$x[,1]-1.5,pca$x[,2], paste(names), cex=0.8) # nomear de acordo com as amostras presentes no arquivo 'samples.txt'
-# legend("bottomright", legend=c("Control", "Lead 30"),
-#        col=color.code, pch=pch.code, cex=0.8)
-# dev.off()
-
-#write.table(cbind(rownames(res.hcpc$data.clust),res.hcpc$data.clust[,c("clust")]),file = "./outros/clusters.csv")
-
-
 #clusters caso
 
 tPCAData<-t(PCAData[,28:53])
@@ -187,17 +179,8 @@ dev.off()
 # Passo 1 do transcriptogramer --------------------------------------------
 
 i=2
-# groups<-matrix(c(c(1,2,3,NA,NA,NA,NA,NA,NA),c(4,5,6,7,8,9,NA,NA,NA),
-#           ,c(10,11,12,13,14,15,17),c(16,18,19,20,21,22,23,24,25,26,NA)),
-#           nrow = 4, byrow = F)
-
-#setwd("/home/clovis/Dropbox/Clovis/analise/Novo/")
 
 for(i in seq(1,2)){
-  #case_control3 <- pheno_data$Run[pheno_data$source_name == "Control_NPCs"&
-  #  pheno_data$Day%in%c(1,2)]
-  #case_control3<-append(case_control3, pheno_data$Run[pheno_data$source_name == "Lead3_NPCs"&
-  # pheno_data$Day%in%c(1,2)])
   if(i == 1){
     group<-c(3,4,5,6,7,8,9,10,11)
   }else
@@ -253,7 +236,7 @@ for(i in seq(1,2)){
   
   if(inherits(possibleError, "error")) {
     cat(paste("Group ", i," - FAIL - Nothing differentially expressed") ,
-        file=paste0("./log/byGroupsPCA",set,"W",radius,"PCAGr",name,".log"),append=TRUE,sep="\n")
+        file=paste0("./levels/byGroupsPCA",set,"W",radius,"PCAGr",name,".log"),append=TRUE,sep="\n")
     next
   }
   dev.copy(pdf,paste0("./",graficos,"/",set,"W",radius,"PCAGr",i,"_",name,".pdf"))
@@ -269,78 +252,4 @@ for(i in seq(1,2)){
   transc[[i]]<-t1
 }
 
-save(transc, file = paste0("./transcriptograms/allTranscriptogramersNew",radius))
-
-
-# 
-# #Case control de todas as amostras a partir do dia 8
-# group<-c(8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26)
-# 
-# 
-# case_control30 <- pheno_data$Run[pheno_data$source_name == "Control_NPCs"&
-#                                    pheno_data$Day%in%group]
-# 
-# 
-# 
-# # case_control30 <-append(case_control30, pheno_data$Run[pheno_data$source_name == paste0(name,"_NPCs")&
-# #                                                          pheno_data$Day%in%c(i:(i+top-1))])
-# case_control30 <- append(case_control30, pheno_data$Run[pheno_data$source_name == paste0(name,"_NPCs")&
-#                                                           pheno_data$Day%in%group])
-# expression<- as.data.frame(logCPM[, colnames(logCPM)%in%case_control30])
-# 
-# 
-# 
-# # t1 <- transcriptogramPreprocess(association = association3000S900, ordering = "ordering_genes3000S900.txt",
-# #                                 radius = 25 )
-# # t1 <- transcriptogramPreprocess(association = "/home/clovis/Doutorado/Artigos/Chumbo/GenesS700.txt", 
-# #                                 ordering = "/home/clovis/Doutorado/Artigos/Chumbo/ordering_GenesS700.txt",
-# #                                 radius = 50 )
-# t1 <- transcriptogramPreprocess(association = association, 
-#                                 ordering = Hs700,
-#                                 radius = radius )
-# 
-# t1 <- transcriptogramStep1(object = t1, expression = expression,
-#                            dictionary = dic_transcriptogramer, nCores = T)
-# 
-# t1 <- transcriptogramStep2(object = t1, nCores = T)
-# 
-# write.table(t1@transcriptogramS2, file = paste0("./samples/",set,"W",radius,"PCAGr8",name,".csv"), sep="\t")
-# 
-# 
-# levels <- c(rep(TRUE,length(group)),rep(FALSE,length(group)))
-# 
-# levels <- c(rep(TRUE,length(group)),rep(FALSE,length(group)))
-# 
-# tmp2<-rbind(levels,case_control30)
-# write.table(tmp2, file = paste0("./levels/",set,"W",radius,"LevelsPCAGr8",name,".csv"), sep="\t")
-# 
-# 
-# possibleError<-tryCatch(t1 <- differentiallyExpressed(object = t1, levels = levels, pValue = pval, species = "Homo sapiens",
-#                                                       boundaryConditions = T,
-#                                                       title = paste0("Differential Expression - " ,name,"  - Group 8 - Radius ",radius," - p-value ",pval)),
-#                         error=function(e) e)
-# # possibleError<-tryCatch(t1 <- differentiallyExpressed(object = t1, levels = levels, pValue = 0.01,
-# #                                                       title = paste0("Differential Expression - " ,name,"  - Day ",i,"-",(i+top-1) )),
-# #                         error=function(e) e)
-# 
-# if(inherits(possibleError, "error")) {
-#   cat(paste("Group ", i," - FAIL - Nothing differentially expressed") ,
-#       file=paste0("./log/byGroupsPCA",set,"W",radius,"PCAGr",name,".log"),append=TRUE,sep="\n")
-#   next
-# }
-# dev.copy(pdf,paste0("./",graficos,"/",set,"W",radius,"PCAGr8_",name,".pdf"))
-# dev.off()
-# 
-# 
-# # Enriquecimento ----------------------------------------------------------
-# t1 <- clusterEnrichment(object = t1, species = "homo sapiens",
-#                         pValue = pval, nCores = T, onlyGenesInDE = F, algorithm = "parentchild")
-# 
-# write.table(Terms(t1), file = paste0("./terms/",set,"W",radius,"PCAGr8",name,".csv"), sep="\t")
-# 
-# save(transc, file = paste0("./transcriptograms/Transcriptogramer8to26",radius))
-# 
-# 
-# 
-# 
-# 
+save(transc, file = paste0("./Data/allTranscriptogramers",radius))

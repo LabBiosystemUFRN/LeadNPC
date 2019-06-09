@@ -1,9 +1,14 @@
 rm(list = ls())
+
+#Did you change it to your base location?
+baseDir="~/LeadTest/"
+setwd(baseDir)
+source(file = "bin/00base.R")
+
 library("edgeR")
 library(biomaRt)
 library(ggplot2)
 
-setwd("/home/clovis/Dropbox/Chumbo/")
 
 
 load(file = "./Data/counts.RData")
@@ -32,9 +37,6 @@ sl3 <- as.data.frame(spline(caso$Day, caso$ENSG00000160211, n=100*length(caso)))
 
 
 p<- ggplot()+
-  # stat_smooth(data=controle,aes(x=Day,y=ENSG00000075624, color = "1"),
-  #             method = lm,
-  #             formula = y ~ poly(x, length(controle)),se = T)+
   geom_smooth(data=lm1,aes(Day,ENSG00000075624,linetype="2"),
               color = "black",
               method = lm,

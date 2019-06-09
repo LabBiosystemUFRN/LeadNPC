@@ -1,22 +1,7 @@
-# rm(list = ls())
-# 
-# library(transcriptogramer)
-# load("./transcriptograms/allTranscriptogramers80")
-# 
-# #object <- t
-# cluster <- 10
-# tempo=1
-# object<-transc[[tempo]]
-# sizeIntervals <- 10
-# sizeMultiplier <- 15
-# sizeBase <- 100
-# sizeLegend <- TRUE
-# colorLegend <- TRUE
-# sizeLegendVertical <- TRUE
-# colorLegendVertical <- TRUE
-# cutoff <- 0.25
-# host = "127.0.0.1"
-# port = 9091
+#Did you change it to your base location?
+baseDir="~/LeadTest/"
+setwd(baseDir)
+
 
 GOdendogram <- function(object, cluster = 1, sizeIntervals = 10,
                         sizeMultiplier = 15, sizeBase = 100, cutoff = 0,

@@ -1,5 +1,10 @@
 rm(list = ls())
-setwd("/home/clovis/Dropbox/Chumbo/Data/")
+
+#Did you change it to your base location?
+baseDir="~/LeadTest/"
+setwd(baseDir)
+source(file = "bin/00base.R")
+
 load("tabelasFig1b.RData")
 
 matAd<-matrix(nrow = 11, ncol = 11)
@@ -15,9 +20,9 @@ for(i in 1:11){
     matAd[j,i]<-soma
   }
 }
-write.csv(x = matAd,file = "/home/clovis/Dropbox/Chumbo/figuras/Figura1/AdjMatrixT1.csv")
+write.csv(x = matAd,file = "./figuras/AdjMatrixT1.csv")
 size<-t(unique(c_filter[,c(1,4)]))
-write.csv(x = size,file = "/home/clovis/Dropbox/Chumbo/figuras/Figura1/AdjMatrixT1.csv")
+write.csv(x = size,file = "./figuras/AdjMatrixT1.csv")
 
 rm(list = ls())
 
@@ -37,4 +42,4 @@ for(i in 1:11){
     matAd[j,i]<-soma
   }
 }
-write.csv(x = matAd,file = "/home/clovis/Dropbox/Chumbo/figuras/Figura1/AdjMatrixT2.csv")
+write.csv(x = matAd,file = "./figuras/AdjMatrixT2.csv")
