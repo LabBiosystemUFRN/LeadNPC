@@ -37,6 +37,7 @@ Now you can use the R scripts below.
 > [01ProcessCounts.R](./bin/01ProcessCounts.R)
 
 #### PCA analysis and create transcriptogramer objects
+Objects generated here will be necessary later.
 > [02analisePCA.R](./bin/02analisePCA.R)
 
 #### Plot transcriptogramer graphics

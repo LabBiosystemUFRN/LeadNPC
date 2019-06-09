@@ -39,6 +39,8 @@ color[[2]]<-rainbowcols[c(1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20,21,24,
 if(!file.exists("./Data/colors.RData"))
   save(color,file = "./Data/colors.RData")
 
+load("./Data/colors.RData")
+
 lim<-0
 i=2
 setwd("./levels/")
@@ -170,7 +172,7 @@ for(i in 1:2){
   }))
   
 }
-pdf(width = 11,height = 7,file = paste0("../",figuras,"/transcAmbos.pdf"))
+pdf(width = 11,height = 7,file = paste0("../tmpGraf/transcAmbos.pdf"))
 suppressMessages(graphics::plot(p))
 dev.off()
 
@@ -239,7 +241,7 @@ for(i in 1:2){
     return(NULL)
   }))
   
-  pdf(width = 11,height = 7,file = paste0("../",figuras,"/transcDif.pdf"))
+  pdf(width = 11,height = 7,file = paste0("../tmpGraf/transcDif.pdf"))
   suppressMessages(graphics::plot(p))
   dev.off()
 
