@@ -33,36 +33,36 @@ Now you can use the R scripts below.
 > [01ProcessCounts.R](./bin/01ProcessCounts.R)
 
 ##### PCA analysis and create transcriptogramer objects
-> 02analisePCA.R
+> [02analisePCA.R](./bin/02analisePCA.R)
 
 ##### Plot transcriptogramer graphics
 > 03plotTrancript.R
 
 ##### Plot circlize graphics
-> 04???plotTrancript.R
+> [04???plotTrancript.R](./bin/04???plotTrancript.R)
 
 
 ##### Cluster superposition analysis
-> 05intersecClusters.R
+> [05intersecClusters.R](./bin/05intersecClusters.R)
 
 ##### Create clusters graphos
 This is not a completely automatic process. You will need to use Cytoscape manually...
-> 06graphTemposManual.R
+> [06graphTemposManual.R](./bin/06graphTemposManual.R)
 
 ##### Generate Figure 2 components
 This is not a completely automatic process. The complete figure was composed by hand using Inkscape...
-> 07BarraTempos.R
+> [07BarraTempos.R](./bin/07BarraTempos.R)
 
 ##### Generate Figures 3 and 4 graphos
 This is not a completely automatic process. You will need to use RedeR and Cytoscape manually...
-> 08graphoClustersRCy3.R
+> [08graphoClustersRCy3.R](./bin/08graphoClustersRCy3.R)
 
 ##### Generate Figures 3 and 4 dendograms
 This is not a completely automatic process. You will need to use RedeR manually...
-> 09graphoClustersRCy3.R
+> [09graphoClustersRCy3.R](./bin/09graphoClustersRCy3.R)
 
 ##### Generate Markers figures
-> 10Marquers.R
+> [10Marquers.R](./bin/10Marquers.R)
 
 ##### Other analysis
 Another auxiliary analysis was performed using several scripts placed inside *bin* folder.
