@@ -36,7 +36,7 @@ Now you can use the R scripts below.
 > [02analisePCA.R](./bin/02analisePCA.R)
 
 ##### Plot transcriptogramer graphics
-> 03plotTrancript.R
+> [03plotTrancript.R](./bin/03plotTrancript.R)
 
 ##### Plot circlize graphics
 > [04???plotTrancript.R](./bin/04???plotTrancript.R)
