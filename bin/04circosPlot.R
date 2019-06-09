@@ -74,11 +74,6 @@ chordDiagram(c_filter5, grid.col = col_grid)
 library(circlize)
 library(dplyr)
 
-setwd("~/Área de Trabalho/Chumbo/")
-
-load("~/Downloads/allTranscriptogramers80")
-load("~/Downloads/assocNoDup.RData")
-load("~/Downloads/clusters12.RData")
 
 # Calculate gaps
 temp1 <- clusters12[, -3]
