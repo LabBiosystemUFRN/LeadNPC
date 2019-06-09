@@ -39,7 +39,7 @@ Now you can use the R scripts below.
 > [03plotTrancript.R](./bin/03plotTrancript.R)
 
 ##### Plot circlize graphics
-> [04???plotTrancript.R](./bin/04???plotTrancript.R)
+> [04circosPlot.R](./bin/04circosPlot.R)
 
 
 ##### Cluster superposition analysis
