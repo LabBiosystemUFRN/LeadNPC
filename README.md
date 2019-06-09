@@ -30,7 +30,7 @@ Now you can use the R scripts below.
 ### Or take a shortcut...
 
 ##### Create logCPM file
-> 01ProcessCounts.R
+> [01ProcessCounts.R](./bin/01ProcessCounts.R)
 
 ##### PCA analysis and create transcriptogramer objects
 > 02analisePCA.R
