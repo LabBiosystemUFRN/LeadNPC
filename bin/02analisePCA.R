@@ -252,4 +252,3 @@ for(i in seq(1,2)){
   transc[[i]]<-t1
 }
 
-save(transc, file = paste0("./Data/allTranscriptogramersNew",radius))
