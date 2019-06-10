@@ -1,5 +1,5 @@
 rm(list = ls())
-baseDir="~/LeadTest/"
+baseDir="~/LeadNPC/"
 setwd(baseDir)
 
 #packages required:
@@ -117,8 +117,8 @@ if (!require("wesanderson")) {
 
 
 #Create folder estructure
-if (!dir.exists("figuras")){
-  dir.create("./figuras")
+if (!dir.exists("figures")){
+  dir.create("./figures")
 }
 
 if (!dir.exists("terms")){

@@ -1,11 +1,11 @@
 rm(list = ls())
 
 #Did you change it to your base location?
-baseDir="~/LeadTest/"
+baseDir="~/LeadNPC/"
 setwd(baseDir)
 source(file = "bin/00base.R")
 
-figuras="figuras"
+figures="figures"
 
 load("./Data/counts.RData")
 load("./Data/allTranscriptogramers80")
@@ -102,7 +102,7 @@ for(i in 1:2){
   }))
 
   plot(p)  
-  pdf(width = 11,height = 4.75,file = paste0("../",figuras,"/transcGrupo",i,".pdf"))
+  pdf(width = 11,height = 4.75,file = paste0("../",figures,"/transcGrupo",i,".pdf"))
   suppressMessages(graphics::plot(p))
   dev.off()
 }

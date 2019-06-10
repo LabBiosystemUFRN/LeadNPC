@@ -1,7 +1,7 @@
 rm(list = ls())
 
 #Did you change it to your base location?
-baseDir="~/LeadTest/"
+baseDir="~/LeadNPC/"
 setwd(baseDir)
 source(file = "bin/00base.R")
 
@@ -14,7 +14,7 @@ normalize = T
 # Ler tabela de counts ----------------------------------------------------
 
 
-figuras="figuras"
+figures="figures"
 graficos="graficos"
 
 load(file = "./Data/counts.RData")

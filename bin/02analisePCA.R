@@ -1,7 +1,7 @@
 rm(list = ls())
 
 #Did you change it to your base location?
-baseDir="~/LeadTest/"
+baseDir="~/LeadNPC/"
 setwd(baseDir)
 source(file = "bin/00base.R")
 
@@ -15,7 +15,7 @@ library(factoextra)
 # Ler tabela de counts ----------------------------------------------------
 
 
-figuras="figuras"
+figures="figures"
 graficos="tmpGraf"
 transcripto="allTranscriptogramers80"
 boundary=TRUE
@@ -96,7 +96,7 @@ g<-ggplot(data = pcs[,1:2],
   theme(legend.position = c(.1,0.2),
         legend.background = element_rect(fill = alpha("white",0)))
 
-pdf(file = paste0("./",figuras,"/PC1xPC2.pdf"),height = 8, width = 11)
+pdf(file = paste0("./",figures,"/PC1xPC2.pdf"),height = 8, width = 11)
 g
 dev.off()
 
@@ -118,7 +118,7 @@ fviz_dend(res.hcpc,
           rect_fill = T,
           rect_border = "jco",
           labels_track_height = 1,type = "phylogenic", repel = T, ggtheme = theme_bw())
-dev.copy(pdf,paste0("./",figuras,"/Dendogram.pdf"))
+dev.copy(pdf,paste0("./",figures,"/Dendogram.pdf"))
 dev.off()
 
 
@@ -139,7 +139,7 @@ g<-g+  theme(legend.position = c(.9,0.2),
   xlab("PC1") + ylab("PC2")
 
 
-pdf(file = paste0("./",figuras,"/clusters.pdf"),height = 8, width = 11)
+pdf(file = paste0("./",figures,"/clusters.pdf"),height = 8, width = 11)
 g
 dev.off()
 
@@ -166,7 +166,7 @@ g<-g+geom_line(data = sd[1:18,],
   theme(legend.position = c(.9,.5),
         legend.background = element_rect(fill = alpha("white",0)))+
   labs(title="")
-pdf(file = paste0("./",figuras,"/variance.pdf"),height = 8, width = 11)
+pdf(file = paste0("./",figures,"/variance.pdf"),height = 8, width = 11)
 g
 dev.off()
 

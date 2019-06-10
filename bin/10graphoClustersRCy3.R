@@ -1,7 +1,7 @@
 rm(list = ls())
 
 #Did you change it to your base location?
-baseDir="~/LeadTest/"
+baseDir="~/LeadNPC/"
 setwd(baseDir)
 source(file = "bin/00base.R")
 
@@ -9,7 +9,7 @@ load("./Data/allTranscriptogramers80")
 load("./Data/tfs.RData")
 load("./Data/colors.RData")
 
-figuras="figuras"
+figures="tmpGraf"
 
 library(igraph)
 library(transcriptogramer)
@@ -83,7 +83,7 @@ for(interval in 1:2){
     RCy3::setEdgeColorDefault(cor,style.name = "Chumbo")
     RCy3::setEdgeLineWidthDefault(10,style.name = "Chumbo")
     RCy3::setVisualStyle("Chumbo")
-    RCy3::exportImage(filename = paste0("/home/clovis/Dropbox/Chumbo/",figuras,"/redesFig2/t",
+    RCy3::exportImage(filename = paste0("./",figures,"/t",
                                         interval,"c",cluster,".svg"),type = "SVG")
 
   }

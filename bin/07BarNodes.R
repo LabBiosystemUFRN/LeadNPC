@@ -1,7 +1,7 @@
 rm(list = ls())
 
 #Did you change it to your base location?
-baseDir="~/LeadTest/"
+baseDir="~/LeadNPC/"
 setwd(baseDir)
 source(file = "bin/00base.R")
 
@@ -26,7 +26,7 @@ load("./Data/allTranscriptogramers80")
 load("./Data/tfs.RData")
 load("./Data/colors.RData")
 
-#figuras="figuras"
+#figures="figures"
 
 library(igraph)
 library(RedeR)
@@ -73,7 +73,7 @@ ref2=2
 maxval=max(table(cl12$Clust1[cl12$Clust1!=0]),
            table(cl12$Clust2[cl12$Clust2!=0]))
 ref2=2
-#setwd("/home/clovis/Dropbox/Chumbo/figuras/Figura2/nodes/")
+#setwd("/home/clovis/Dropbox/Chumbo/figures/Figura2/nodes/")
 # clusters 1 p/ 1----
 #somente quem é 1 para 1
 for(ref2 in c(2,3,4,5,6,7,9,10,11)){
@@ -107,7 +107,7 @@ for(ref2 in c(2,3,4,5,6,7,9,10,11)){
   
   plot(g)
   
-  svg(width = 11,height = 8.95,file = paste0("./figuras/countGenesClust",ref2,".svg"))
+  svg(width = 11,height = 8.95,file = paste0("./figures/countGenesClust",ref2,".svg"))
   suppressMessages(graphics::plot(g))
   dev.off()
   
@@ -156,7 +156,7 @@ g <- ggplot()+
 
 plot(g)
 
-svg(width = 11,height = 8.95,file = paste0("./figuras/countGenesClust",ref2,".svg"))
+svg(width = 11,height = 8.95,file = paste0("./figures/countGenesClust",ref2,".svg"))
 suppressMessages(graphics::plot(g))
 dev.off()
 
@@ -200,7 +200,7 @@ g <- ggplot()+
 
 plot(g)
 
-svg(width = 11,height = 8.95,file = paste0("./figuras/countGenesClust",ref2,".svg"))
+svg(width = 11,height = 8.95,file = paste0("./figures/countGenesClust",ref2,".svg"))
 suppressMessages(graphics::plot(g))
 dev.off()
 

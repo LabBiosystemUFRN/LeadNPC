@@ -1,7 +1,7 @@
 rm(list = ls())
 
 #Did you change it to your base location?
-baseDir="~/LeadTest/"
+baseDir="~/LeadNPC/"
 setwd(baseDir)
 source(file = "bin/00base.R")
 
@@ -14,7 +14,7 @@ normalize = F
 # Ler tabela de counts ----------------------------------------------------
 
 
-figuras="figuras"
+figures="figures"
 graficos="graficos"
 
 load(file = "./Data/counts.RData")
@@ -461,7 +461,7 @@ for(treat in c(1,2)){
     allTreat<-rbind(allTreat,ctlExp2)
   }
 }
-ggsave(filename = "./figuras/markControl.pdf", 
+ggsave(filename = "./figures/markControl.pdf", 
        plot = g[[4]], 
        device = "pdf", 
        
@@ -469,7 +469,7 @@ ggsave(filename = "./figuras/markControl.pdf",
        width = 7, height = 4.25, units = "in",
        dpi = 300)
 
-ggsave(filename = "./figuras/markTreat.pdf", 
+ggsave(filename = "./figures/markTreat.pdf", 
        plot = g[[8]], 
        device = "pdf", 
        
@@ -557,7 +557,7 @@ lay <- rbind(c(1,2),
 
 grid<-grid.arrange(painel1[[1]],painel1[[2]],painel1[[3]], painel1[[4]],layout_matrix = lay)
 
-ggsave(filename = paste0("./figuras/FigS041a11",
+ggsave(filename = paste0("./figures/FigS041a11",
                          ifelse(normalize,"Norm","Abs"),".pdf"), 
        plot = grid, 
        device = "pdf", 
@@ -652,7 +652,7 @@ grid<-grid.arrange(painel2[[1]],painel2[[3]],
                    painel2[[5]], painel2[[6]]
                    ,layout_matrix = lay)
 
-ggsave(filename = paste0("./figuras/FigS053a11",
+ggsave(filename = paste0("./figures/FigS053a11",
                          ifelse(normalize,"Norm","Abs"),".pdf"), 
        plot = grid, 
        device = "pdf", 

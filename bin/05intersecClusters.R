@@ -1,7 +1,7 @@
 rm(list = ls())
 
 #Did you change it to your base location?
-baseDir="~/LeadTest/"
+baseDir="~/LeadNPC/"
 setwd(baseDir)
 source(file = "bin/00base.R")
 
@@ -11,7 +11,7 @@ library(ggplot2)
 load("./Data/counts.RData")
 load("./Data/allTranscriptogramers80")
 
-figuras="figuras"
+figures="figures"
 
 clusters<-list()
 object<-transc[[1]]
@@ -45,7 +45,7 @@ for(i in 1:2){
     #summary(p1)
   }
 }
-svg(file = paste0("./",figuras,"/superposClust2.svg"))
+svg(file = paste0("./",figures,"/superposClust2.svg"))
 plot(p1)
 dev.off()
 

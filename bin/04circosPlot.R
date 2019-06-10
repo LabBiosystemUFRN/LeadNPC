@@ -1,7 +1,7 @@
 rm(list = ls())
 
 #Did you change it to your base location?
-baseDir="~/LeadTest/"
+baseDir="~/LeadNPC/"
 setwd(baseDir)
 source(file = "bin/00base.R")
 
@@ -10,7 +10,7 @@ source(file = "bin/00base.R")
 library(circlize)
 library(dplyr)
 
-figuras = "figuras"
+figures = "figures"
 
 load("./Data/allTranscriptogramers80")
 
@@ -70,7 +70,7 @@ col_grid <- c("#ff2222ff", "#009900ff", "#ffff00ff", "#ff9e30ff", "#1818fcff", "
 # Plot
 circos.clear()
 
-pdf(width = 11,height = 11,file = paste0("./",figuras,"/circ1.pdf"))
+pdf(width = 11,height = 11,file = paste0("./",figures,"/circ1.pdf"))
 chordDiagram(c_filter5, grid.col = col_grid)
 dev.off()
 
@@ -135,7 +135,7 @@ col_grid <- c("#ff2222ff", "#ff9e30ff", "#01ff40ff", "#0000ffff", "#ada27aff", "
 
 # Plot
 circos.clear()
-pdf(width = 11,height = 11,file = paste0("./",figuras,"/circ2.pdf"))
+pdf(width = 11,height = 11,file = paste0("./",figures,"/circ2.pdf"))
 chordDiagram(c_filter5, grid.col = col_grid)
 dev.off()
 

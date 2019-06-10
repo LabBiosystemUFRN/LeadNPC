@@ -1,7 +1,7 @@
 rm(list = ls())
 
 #Did you change it to your base location?
-baseDir="~/LeadTest/"
+baseDir="~/LeadNPC/"
 setwd(baseDir)
 source(file = "bin/00base.R")
 
@@ -85,6 +85,6 @@ geom_line(data=sc1,aes(x,y, color = "1"))+
   scale_y_continuous(limits = c(0,max(exp)),breaks = seq(0,12,2))+
   scale_x_continuous(limits = c(0,26),breaks = seq(0,26,5))
 
-pdf(width = 11,height = 8,file = paste0("./figuras/HKGenes.pdf"))
+pdf(width = 11,height = 8,file = paste0("./figures/HKGenes.pdf"))
   suppressMessages(graphics::plot(p))
 dev.off()

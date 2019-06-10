@@ -1,7 +1,7 @@
 rm(list = ls())
 
 #Did you change it to your base location?
-baseDir="~/LeadTest/"
+baseDir="~/LeadNPC/"
 setwd(baseDir)
 source(file = "bin/00base.R")
 
@@ -20,9 +20,9 @@ for(i in 1:11){
     matAd[j,i]<-soma
   }
 }
-write.csv(x = matAd,file = "./figuras/AdjMatrixT1.csv")
+write.csv(x = matAd,file = "./figures/AdjMatrixT1.csv")
 size<-t(unique(c_filter[,c(1,4)]))
-write.csv(x = size,file = "./figuras/AdjMatrixT1.csv")
+write.csv(x = size,file = "./figures/AdjMatrixT1.csv")
 
 rm(list = ls())
 
@@ -42,4 +42,4 @@ for(i in 1:11){
     matAd[j,i]<-soma
   }
 }
-write.csv(x = matAd,file = "./figuras/AdjMatrixT2.csv")
+write.csv(x = matAd,file = "./figures/AdjMatrixT2.csv")

@@ -1,7 +1,7 @@
 rm(list = ls())
 
 #Did you change it to your base location?
-baseDir="~/LeadTest/"
+baseDir="~/LeadNPC/"
 setwd(baseDir)
 source(file = "bin/00base.R")
 
@@ -215,7 +215,7 @@ cltRef<-data.frame(c1=c1,c2=c2)
   }
   
   rm(clTmp)
-  conecDir="./figuras/"
+  conecDir="./figures/"
   ref2=3
   # clusters 1 p/ 1----
   #somente quem é 1 para 1
