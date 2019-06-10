@@ -27,7 +27,7 @@ Then generate the count's file
 
 Now you can use the R scripts below.
 
-### Or take a shortcut...
+### Or take a shortcut, and start here...
 
 #### Set up the enviroment and instaling the R packages 🤞
 > [00base.R](./bin/00base.R)
