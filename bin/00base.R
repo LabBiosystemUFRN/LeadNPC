@@ -1,4 +1,5 @@
 rm(list = ls())
+#Did you change it to your base location?
 baseDir="~/LeadNPC/"
 setwd(baseDir)
 
