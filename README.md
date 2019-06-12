@@ -30,7 +30,7 @@ Now you can use the R scripts below.
 ### Or take a shortcut, and start here...
 Is recommended run [00base.R](./bin/00base.R) and [02analisePCA.R](./bin/02analisePCA.R) before try to run any other script. Those scripts will setup the R environment and create some necessary files.
 
-#### Set up the enviroment and instaling the R packages 🤞
+#### Set up the enviroment and instaling the R packages 
 > [00base.R](./bin/00base.R)
 
 
