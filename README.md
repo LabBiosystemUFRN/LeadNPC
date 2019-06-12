@@ -38,7 +38,7 @@ Is recommended run [00base.R](./bin/00base.R) and [02analisePCA.R](./bin/02anali
 > [01ProcessCounts.R](./bin/01ProcessCounts.R)
 
 #### PCA analysis and create transcriptogramer objects
-Objects generated here will be necessary later. 
+Objects generated here will be necessary later. If you are using a more recent version of transcriptogramer than version 1.3.4, the results can be a little bit different, because it uses data from STRINGdb release 11.
 > [02analisePCA.R](./bin/02analisePCA.R)
 
 #### Plot transcriptogramer graphics
